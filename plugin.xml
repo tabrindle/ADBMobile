@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    id="com.ma.Shop.ADBMobile_PhoneGap"
+    version="1.0.0">
+
+    <name>ADBMobile_PhoneGap</name>
+
+  <description>
+    ADBMobile_PhoneGap 
+  </description>
+
+  <asset src="www/ADB_Helper.js" target="plugins/ADB_Helper.js" />
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="plugins">
+      <plugin name="ADBMobile_PhoneGap" value="com.ma.Shop.ADBMobile_PhoneGap"/>
+    </config-file>
+
+    <source-file src="src/android/com/ma/Shop/ADBMobile_PhoneGap.java" target-dir="src/com/ma/Shop" />
+    <source-file src="src/android/adobeMobileLibrary.jar" target-dir="libs"/>
+  </platform>
+
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*/plugins">
+      <plugin name="ADBMobile_PhoneGap" value="ADBMobile_PhoneGap" onload="true" />
+    </config-file>
+
+    <config-file target="config.xml" parent="/widget">
+      <feature name="ADBMobile_PhoneGap">
+        <param name="ios-package" value="ADBMobile_PhoneGap"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/ADBMobile_PhoneGap.h" />
+
+    <source-file src="src/ios/ADBMobile_PhoneGap.m" />
+
+  </platform>
+</plugin>
