@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-    id="com.ma.Shop.ADBMobile_PhoneGap"
+    id="com.adobe.mobile.ADBMobile_PhoneGap"
     version="1.0.0">
 
     <name>ADBMobile_PhoneGap</name>
@@ -11,6 +11,10 @@
 
   <asset src="www/ADB_Helper.js" target="plugins/ADB_Helper.js" />
 
+  <js-module src="www/ADB_Helper.js" name="ADB">
+      <clobbers target="cordova.plugins.ADB" />
+  </js-module>
+
   <engines>
     <engine name="cordova" version=">=3.0.0" />
   </engines>
@@ -18,10 +22,10 @@
   <!-- android -->
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="plugins">
-      <plugin name="ADBMobile_PhoneGap" value="com.ma.Shop.ADBMobile_PhoneGap"/>
+      <plugin name="ADBMobile_PhoneGap" value="com.adobe.mobile.ADBMobile_PhoneGap"/>
     </config-file>
 
-    <source-file src="src/android/com/ma/Shop/ADBMobile_PhoneGap.java" target-dir="src/com/ma/Shop" />
+    <source-file src="src/android/com/adobe/mobile/ADBMobile_PhoneGap.java" target-dir="src/com/adobe/mobile" />
     <source-file src="src/android/adobeMobileLibrary.jar" target-dir="libs"/>
   </platform>
 
