@@ -21,16 +21,21 @@
 
   <!-- android -->
   <platform name="android">
-    <config-file target="res/xml/config.xml" parent="plugins">
-      <plugin name="ADBMobile_PhoneGap" value="com.adobe.mobile.ADBMobile_PhoneGap"/>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="ADBMobile_PhoneGap">
+            <param name="android-package" value="com.adobe.mobile.ADBMobile_PhoneGap" />
+        </feature>
     </config-file>
 
     <source-file src="src/android/com/adobe/mobile/ADBMobile_PhoneGap.java" target-dir="src/com/adobe/mobile" />
     <source-file src="src/android/adobeMobileLibrary.jar" target-dir="libs"/>
+    
   </platform>
 
   <!-- ios -->
   <platform name="ios">
+
     <config-file target="config.xml" parent="/*/plugins">
       <plugin name="ADBMobile_PhoneGap" value="ADBMobile_PhoneGap" onload="true" />
     </config-file>
